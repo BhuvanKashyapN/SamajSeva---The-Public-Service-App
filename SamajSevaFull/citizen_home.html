@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Citizen Home</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+  <div class="container">
+    <h2>Citizen Home</h2>
+    <div class="note center">Welcome, <span id="citName">Citizen</span></div>
+    <div class="actions">
+      <a class="btn" href="my_complaints.html">View My Complaints & Status</a>
+      <a class="btn" href="raise_complaint.html">Raise a Complaint</a>
+      <a class="btn" href="citizen_feedback.html">Provide Feedback</a>
+    </div>
+    <a class="link" href="index.html">Logout</a>
+  </div>
+  <script src="app.js"></script>
+  <script>
+    const citizen = sessionStorage.getItem('current_citizen');
+    if (citizen) {
+      document.getElementById('citName').textContent = citizen;
+    }
+  </script>
+</body>
+</html>

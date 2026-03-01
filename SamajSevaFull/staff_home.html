@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Staff Home</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+  <div class="container">
+    <h2>Staff Home</h2>
+    <div class="note center">Welcome, <span id="staffName">Staff</span></div>
+    <div class="actions">
+      <a class="btn" href="staff_dashboard.html">Go to Dashboard</a>
+    </div>
+    <a class="link" href="index.html">Logout</a>
+  </div>
+  <script src="app.js"></script>
+  <script>
+    const staff = sessionStorage.getItem('current_staff');
+    if (staff) {
+      const staffObj = JSON.parse(staff);
+      document.getElementById('staffName').textContent = staffObj.name;
+    }
+  </script>
+</body>
+</html>

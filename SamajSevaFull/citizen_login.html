@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Citizen Login</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+  <div class="container">
+    <h2>Citizen Login</h2>
+    <p class="small">Enter the phone number you registered with.</p>
+    <input id="loginPhone" placeholder="Registered phone number" />
+    <div class="row">
+      <button onclick="sendLoginOtp()">Send OTP</button>
+    </div>
+    <input id="loginOtp" placeholder="Enter OTP received" />
+    <button onclick="completeLogin()">Login</button>
+    <a class="link" href="index.html">Back to Home</a>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

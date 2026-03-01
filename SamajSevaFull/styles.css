@@ -1,0 +1,331 @@
+/* ================================
+   GLOBAL RESET & VARIABLES
+================================ */
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --secondary: #06b6d4;
+  --bg-gradient: linear-gradient(135deg, #667eea, #764ba2);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --border: rgba(255, 255, 255, 0.25);
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Poppins, Roboto, Arial, sans-serif;
+}
+
+/* ================================
+   PAGE BACKGROUND
+================================ */
+body {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ================================
+   MAIN CONTAINER (Glassmorphism)
+================================ */
+.container {
+  width: 420px;
+  margin: 60px auto;
+  padding: 26px;
+  border-radius: 18px;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: fadeUp 0.6s ease;
+}
+
+/* ================================
+   ANIMATION
+================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   HEADINGS & TEXT
+================================ */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.small {
+  font-size: 13px;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.note {
+  font-size: 14px;
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+/* ================================
+   INPUTS & SELECT
+================================ */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 13px 14px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* ================================
+   BUTTONS
+================================ */
+button,
+.btn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  transition: all 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(79, 70, 229, 0.4);
+}
+
+button.secondary {
+  background: linear-gradient(135deg, #6b7280, #374151);
+}
+
+/* ================================
+   LINKS
+================================ */
+.link {
+  display: block;
+  text-align: center;
+  margin-top: 14px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   ACTION GROUP
+================================ */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ================================
+   STAFF LOGIN SMALL BUTTON
+================================ */
+.staff-small {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, #111827, #374151);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.staff-small:hover {
+  transform: scale(1.05);
+}
+
+/* ================================
+   CARDS (Complaints)
+================================ */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 14px 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeUp 0.5s ease;
+}
+
+.card b {
+  color: var(--text-dark);
+}
+
+/* ================================
+   IMAGES
+================================ */
+img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* ================================
+   STATUS BADGES
+================================ */
+.status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.status.pending {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+}
+
+.status.progress {
+  background: rgba(59, 130, 246, 0.15);
+  color: #1d4ed8;
+}
+
+.status.completed {
+  background: rgba(34, 197, 94, 0.18);
+  color: #166534;
+}
+
+/* ================================
+   FEEDBACK FORM
+================================ */
+.feedback {
+  margin-top: 12px;
+}
+
+.feedback textarea {
+  height: 90px;
+}
+
+/* ================================
+   DASHBOARD COUNTS
+================================ */
+.counts {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.count {
+  flex: 1;
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.count .number {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 480px) {
+  .container {
+    width: 92%;
+    margin: 30px auto;
+  }
+}
+
+
+/* ================================
+   FEEDBACK STYLES
+================================ */
+.feedback-display {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(79, 70, 229, 0.05);
+  border-radius: 10px;
+  border-left: 3px solid var(--primary);
+}
+
+.feedback-display p {
+  margin: 6px 0;
+  color: var(--text-dark);
+}
+
+.feedback-display strong {
+  color: var(--primary);
+}
+
+.feedback label {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* ================================
+   STAFF PROOF UPLOAD
+================================ */
+.card label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.card input[type="file"] {
+  margin-bottom: 10px;
+}
+
+.card button {
+  width: auto;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 14px;
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Citizen Register</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+  <div class="container">
+    <h2>Citizen Registration</h2>
+    <p class="small">Enter phone number and click "Send OTP".</p>
+    <input id="regPhone" placeholder="Enter phone number" />
+    <div class="row">
+      <button onclick="sendRegisterOtp()">Send OTP</button>
+    </div>
+    <input id="regOtp" placeholder="Enter OTP received" />
+    <button onclick="completeRegistration()">Register</button>
+    <a class="link" href="index.html">Back to Home</a>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
